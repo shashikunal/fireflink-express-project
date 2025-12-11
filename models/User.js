@@ -41,4 +41,9 @@ UserSchema.methods.getSignedJwtToken = function () {
   return jwt.sign({ id: this._id }, JWT_SECRET, { expiresIn: JWT_EXPIRE });
 };
 
+// Match Password
+UserSchema.methods.matchPassword = async function (enterPassword) {
+  return await compare(enterPassword, this.password);
+};
+
 export let UserModel = model("User", UserSchema);
