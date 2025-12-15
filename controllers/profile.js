@@ -10,7 +10,7 @@ import { UserModel } from "../models/User.js";
 */
 export const profile = async (req, res, next) => {
   try {
-    let profileData = await UserModel.findOne({ _id: req.user.id });
+    let profileData = await UserModel.findById(req.user.id);
     console.log(profileData);
     res.status(200).json({
       success: true,

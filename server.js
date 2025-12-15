@@ -5,6 +5,7 @@ let { PORT } = await import("./config/index.js");
 import dbConnection from "./config/db.js";
 //call route middlewares
 import { authRouter } from "./routes/authRoute.js";
+import { courseRouter } from "./routes/courseRoute.js";
 const app = express();
 
 app.use(express.json());
@@ -24,4 +25,5 @@ let StartApp = async () => {
 
 //call router middlewares
 app.use("/api/v1", authRouter);
+app.use("/api/v1", courseRouter);
 StartApp();

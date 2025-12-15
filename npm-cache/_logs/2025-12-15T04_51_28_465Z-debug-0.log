@@ -1,0 +1,12 @@
+0 verbose cli C:\nvm4w\nodejs\node.exe C:\nvm4w\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.8.2
+2 info using node@v20.19.5
+3 silly config load:file:C:\Users\User\AppData\Local\nvm\v20.19.5\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\User\Documents\fireflink-express-project\.npmrc
+5 silly config load:file:C:\Users\User\.npmrc
+6 silly config load:file:C:\Users\User\Documents\fireflink-express-project\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm start
+8 verbose argv "start"
+9 verbose logfile logs-max:10 dir:C:\Users\User\Documents\fireflink-express-project\npm-cache\_logs\2025-12-15T04_51_28_465Z-
+10 verbose logfile C:\Users\User\Documents\fireflink-express-project\npm-cache\_logs\2025-12-15T04_51_28_465Z-debug-0.log
+11 silly logfile done cleaning log files

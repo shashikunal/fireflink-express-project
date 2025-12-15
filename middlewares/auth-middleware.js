@@ -24,3 +24,19 @@ export const protect = async (req, res, next) => {
     return next(new Error("not authorized to access this route"));
   }
 };
+
+//Grant access to specific roles
+export const ROLE = (...roles) => {
+  console.log(roles);
+  return (req, res, next) => {
+    console.log(req.user.role);
+    if (!roles.includes(req?.user?.role)) {
+      return next(
+        res.status(401).json({
+          message: `User role ${req?.user?.role} is not authorized to access this route`,
+        })
+      );
+    }
+    next();
+  };
+};
