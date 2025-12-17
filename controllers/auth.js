@@ -68,6 +68,8 @@ export const login = async (req, res, next) => {
 const sendTokenResponse = (user, statusCode, res) => {
   //create a token
   const token = user.getSignedJwtToken();
+  let _id = user._id;
+  console.log(_id);
   const options = {
     expires: new Date(Date.now() + JWT_COOKIE_EXPIRE * 24 * 60 * 60 * 1000),
     httpOnly: true,
@@ -79,5 +81,5 @@ const sendTokenResponse = (user, statusCode, res) => {
   res
     .status(statusCode)
     .cookie("token", token, options)
-    .json({ success: true, token });
+    .json({ success: true, token, _id });
 };

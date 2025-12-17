@@ -1,3 +1,7 @@
 {
-  "cSpell.words": ["CREATECOURSE", "extensionless"]
+  "cSpell.words": [
+    "CREATECOURSE",
+    "extensionless",
+    "FETCHCOURSES"
+  ]
 }

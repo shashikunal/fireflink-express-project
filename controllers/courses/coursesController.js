@@ -32,3 +32,31 @@ export const CreateCourseController = async (req, res, next) => {
     console.error(err);
   }
 };
+
+
+/* ----@DESC FETCH COURSES ROUTES
+@method GET
+@FETCHCOURSES
+@ACCESS PUBLIC  
+@ROUTE /api/v1/course/all-courses
+@ROLE ["user" , "publisher" , "ADMIN"]
+@ENDPOINT http://www.localhost:5000/api/v1/course/all-courses
+@CONTENT-TYPE application/json
+*/
+
+export const AllCoursesController = async (req, res, next) => {
+  try {
+    let courses = await CourseModel.find().populate({
+      path: "users",
+      select: "email username _id role",
+    });
+    console.log(courses);
+
+    res.status(200).json({
+      message: "all courses fetched successfully",
+      count: courses.length,
+      courses,
+    });
+  } catch (err) { 
+    console.error(err);
+   }  } 
